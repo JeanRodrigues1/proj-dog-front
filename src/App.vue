@@ -1,30 +1,50 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div id="app">
+    <header>
+      <h1>ProjDog Petshop</h1>
+      <nav>
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/donos">Donos</router-link></li>
+          <li><router-link to="/pacientes">Pacientes</router-link></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- A área onde as views serão carregadas dependendo da navegação -->
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
-<style>
+<script lang="ts">
+export default {
+  name: 'App',
+};
+</script>
+
+<style scoped>
+/* Estilos específicos do App.vue, se necessário */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+header {
+  background-color: #42b983;
+  padding: 10px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+nav li {
+  display: inline-block;
 }
 </style>
